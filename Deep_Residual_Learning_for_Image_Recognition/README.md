@@ -1,12 +1,10 @@
 # Deep Residual Learning for Image Recognition
 
-Subject: DL
-
-# Information
-
-- Authors : Kaming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun (Microsoft Research)
-- Date : 10 Dec 2015
-- Keywords : Deep Learning, Network Architecture
+Author: Kaming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun (Microsoft Research)
+Read: 2022년 5월 9일
+Subject: Deep Learning, Computer Vision, Network Architecture, Pattern Recognition
+Submit: 2015년 12월 10일
+URL: https://arxiv.org/abs/1512.03385
 
 # Summary
 
