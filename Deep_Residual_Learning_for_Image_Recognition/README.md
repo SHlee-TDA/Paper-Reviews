@@ -1,15 +1,19 @@
 # Deep Residual Learning for Image Recognition
 
-Author: Kaming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun (Microsoft Research)
-Read: 2022년 5월 9일
-Subject: Deep Learning, Computer Vision, Network Architecture, Pattern Recognition
-Submit: 2015년 12월 10일
-URL: https://arxiv.org/abs/1512.03385
+- Author: Kaming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun (Microsoft Research)
+
+- Read: 2022년 5월 9일
+
+- Subject: Deep Learning, Computer Vision, Network Architecture, Pattern Recognition
+
+- Submit: 2015년 12월 10일
+
+- URL: https://arxiv.org/abs/1512.03385
 
 # Summary
 
-- ISSUE : Neural Net의 Depth가 증가함에 따라 training이 어려워지는 문제가 발생.
-- SOLUTION : Residual Learning을 통해 별도의 계산량 변화 없이 효과적으로 Deep Neural Net을 training 시킬 수 있음.
+- **ISSUE** : Neural Net의 Depth가 증가함에 따라 training이 어려워지는 문제가 발생.
+- **SOLUTION** : Residual Learning을 통해 별도의 계산량 변화 없이 효과적으로 Deep Neural Net을 training 시킬 수 있음.
 
 # Main Idea
 
