@@ -101,7 +101,7 @@ deep residual learning은 네트워크가 곧바로 $\mathcal{H}(x)$를 근사�
 
 극단적으로는, $\mathcal{H}$가 identity에 가깝다면, residual $\mathcal{F}$를 zero로 만드는 것이 non-linear layer를 쌓아서 identity mapping을 근사시키는 것보다 쉬울 것이다.
 
-# Details
+# Methodology
 
 ## Residual Learning
 
