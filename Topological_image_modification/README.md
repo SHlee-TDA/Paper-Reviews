@@ -26,12 +26,18 @@
 단순히 *topologically insignificant*한 object만 제거하던 기존의 아이디어와 다름에 유의하자.
 
 
+
 # Motivation
+
+![Figure 1](https://github.com/SHlee-TDA/Paper-Reviews/blob/main/Topological_image_modification/figure1.png?raw=true)
+
 
 Image data는 특유의 grid structure 덕분에 TDA를 수행하기 용이하다.
 그러나 실제 이미지 내에는 outlier가 많기 때문에 단순히 persistent homology를 사용하는 것으로 원하는 solution을 얻기 어렵다.
 저자들은 이런 상황을 극복하고자 *Topological Image Modification (TIM)*을 이용해 먼저 이미지를 TDA를 하기 좋게끔 처리한다음 *Topological Image Processing (TIP)*으로 원하는 작업을 수행한다.
 TIM과 TIP의 
+
+
 
 
 # Methodology
@@ -45,10 +51,15 @@ Cubical complex를 사용할 때는 pixel이 상하좌우 네 가지 방향으�
 애초에 TDA로 데이터 처리하는 것이 그다지 빠르지 못한데, 이러한 점은 매우 불리하게 작용할 것으로 보인다.
 더군다나 image의 resolution이 충분히 커지면 cubical complex를 쓰는 것으로 충분히 detail한 정보를 캐치할 수 있을 것으로 보인다.
 
+![simp_vs_cubic](https://github.com/SHlee-TDA/Paper-Reviews/blob/main/Topological_image_modification/cubic_vs_simp.png?raw=true)
+
 어떤 경우던 상관없이 이미지 I에서 filtration을 구성하기 위해 $f(\sigma) = \max_{p\in\sigma} gray_I(p)$를 사용한다. 
 여기서 $\sigma$는 이미지의 grid 위에 정의된 simplicial (또는 cubical) complex $K$다. 
 이 함수는 simplex (혹은 k-cube)를 구성하는 pixel들 중 가장 grayscale 값이 큰 값으로 simplex에 값을 부여하는 것이다.
 이 함수 $f$를 사용하여 sublevel set filtration $\empty = K_0 \subseteq K_1 \subseteq \ldots \subseteq K_n = K$를 구성한다. 
+
+![filtration](https://github.com/SHlee-TDA/Paper-Reviews/blob/main/Topological_image_modification/filtration.png?raw=true)
+
 
 RGB 이미지의 경우앤 standard linear converter를 사용하여 다음과 같이 grayscale화 한다:
 $gray_I(p) = \frac{1}{1000} (299 red_I(p) + 587 green_I(p) + 114 blue_I(p))$
