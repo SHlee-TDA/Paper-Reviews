@@ -77,7 +77,6 @@ Deep Learning architecture는 얕은 layer에서 깊은 layer로 갈 수록 점�
 :--:
 <b>Figure 1. Both of training error and test error for deeper network are high in comparison with shallower network. *Note.* "From Deep Residual Learning for Image Recognition", by He, Kaming et al. 2015</b>
 
-20-층짜리 네트워크보다 56-층짜리 네트워크의 에러가 더 높다.
 
 degradation 문제에 대해서 조금 더 살펴보자.
 
@@ -86,8 +85,6 @@ degradation 문제에 대해서 조금 더 살펴보자.
 예를 들어보자.
 
 shallower network와 그것에 layer를 추가해 얻은 deeper network를 비교한다고 하자.
-
-shallower network를 학습시켜서 얻은 accuracy를 Acc(shall)라고 하자.
 
 degradation을 피하려면 deeper network가 최대한 shallower network와 유사하게 작동하면 될 것이다.
 
