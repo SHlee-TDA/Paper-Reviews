@@ -38,10 +38,14 @@ Deep Learning도 결국은 여러 층의 non-linear layer 구조를 활용하여
 Problem Setting : $\mathcal{H} : \mathbb{R}\rightarrow \mathbb{R}$는 $\mathcal{H}(x) = x\sin{x} +x$로 주어져 있다. 이 상황에서 데이터를 sampling해 MLP를 이용해 각각 $\mathcal{H}(x)$와 $\mathcal{H}(x) -x$로 근사시켜보고 MSE를 측정해보자.
 
 ![$\mathcal{H}(x)$에서 50개의 sample을 얻어 MLP로 학습시켰다.](https://github.com/SHlee-TDA/MyPaperReviews/blob/main/Deep_Residual_Learning_for_Image_Recognition/Residual02.png?raw=true)
+:--:
+<b>\mathcal{H}(x)$에서 50개의 sample을 얻어 MLP로 학습시켰다.</b>
 
 $\mathcal{H}(x)$에서 50개의 sample을 얻어 MLP로 학습시켰다.
 
 ![동일한 sample에서 residual $\mathcal{H}(x)-x$로 동일한 MLP 스트럭쳐로 학습시켰다. MSE 점수가 훨씬 좋다.](https://github.com/SHlee-TDA/MyPaperReviews/blob/main/Deep_Residual_Learning_for_Image_Recognition/Residual03.png?raw=true)
+:--:
+<b>동일한 sample에서 residual $\mathcal{H}(x)-x$로 동일한 MLP 스트럭쳐로 학습시켰다. MSE 점수가 훨씬 좋다.</b>
 
 동일한 sample에서 residual $\mathcal{H}(x)-x$로 동일한 MLP 스트럭쳐로 학습시켰다. MSE 점수가 훨씬 좋다.
 
@@ -54,6 +58,8 @@ Deep Learning architecture는 얕은 layer에서 깊은 layer로 갈 수록 점�
 예를 들어 처음에는 이미지의 curvature와 같은 low level feature를 학습하다가 그 다음 layer에서는 눈, 코, 입, 귀와 같은 middle level feature를 학습하고, 마지막에는 얼굴 형태와 같은 high level feature를 학습하는 식이다.
 
 ![https://github.com/SHlee-TDA/MyPaperReviews/blob/main/Deep_Residual_Learning_for_Image_Recognition/dnn.png?raw=true](https://github.com/SHlee-TDA/MyPaperReviews/blob/main/Deep_Residual_Learning_for_Image_Recognition/dnn.png?raw=true)
+:--:
+<b>계층적으로 feature를 학습하는 것을 도식화한 것</b>
 
 그러나 불행하게도 Network에 단순히 layer를 쌓는 것은 쉽지만, 그 network가 더 잘 학습할 것이라고는 보장하기 어렵다.
 
@@ -68,6 +74,8 @@ Deep Learning architecture는 얕은 layer에서 깊은 layer로 갈 수록 점�
 이 문제는 충분히 deep한 model에 layer를 더 추가헀더니 training error가 더 커지는 현상이다. 
 
 ![20-층짜리 네트워크보다 56-층짜리 네트워크의 에러가 더 높다.](https://github.com/SHlee-TDA/MyPaperReviews/blob/main/Deep_Residual_Learning_for_Image_Recognition/figure1.png?raw=true)
+:--:
+<b>Figure 1. Both of training error and test error for deeper network are high in comparison with shallower network. *Note.* "From Deep Residual Learning for Image Recognition", by He, Kaming et al. 2015</b>
 
 20-층짜리 네트워크보다 56-층짜리 네트워크의 에러가 더 높다.
 
@@ -124,6 +132,8 @@ $\mathcal{H}(x)$를 stacked layer들(꼭 전체 네트워크일 필요는 없다
 ## Identity Mapping by Shortcuts
 
 ![https://github.com/SHlee-TDA/MyPaperReviews/blob/main/Deep_Residual_Learning_for_Image_Recognition/figure2.png?raw=true](https://github.com/SHlee-TDA/MyPaperReviews/blob/main/Deep_Residual_Learning_for_Image_Recognition/figure2.png?raw=true)
+:--:
+<b>Figure 2. A building block of Residual learning. *Note.* "From Deep Residual Learning for Image Recognition", by He, Kaming et al. 2015</b>
 
 Residual learning은 위 그림으로 도식화된 building block들을 쌓아서 구성된다.
 
