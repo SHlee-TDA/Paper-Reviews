@@ -78,6 +78,11 @@ standard linear converter는 Python PIL 라이브러리에 구현되어 있다.
 
 ![filtration](https://github.com/SHlee-TDA/Paper-Reviews/blob/main/Topological_image_modification/filtration.png?raw=true)
 
+![filtration_image](https://github.com/SHlee-TDA/Paper-Reviews/blob/main/Topological_image_modification/filtration_image.png?raw=true)
+
+![filtration_gif](https://github.com/SHlee-TDA/Paper-Reviews/blob/main/Topological_image_modification/filtration.gif?raw=true)
+
+
 이렇게 이미지를 complex로 표현하고 나면 각 complex의 $k$-th *homology*를 계산할 수 있다.
 $k$-homology의 dimension을 $k$-th *Betti number* $\beta_k$라고 한다.
 Betti number는 complex가 가지는 구멍의 개수를 계산해준다.
@@ -95,6 +100,33 @@ Persistent homology가 가지는 또 다른 이점은 noise에 robust하다는 �
 >따라서 두 이미지의 픽셀값의 차이가 작다면 두 이미지의 persistent homology는 유사하다.
 >예를들어, 이미지 $I$에 약간의 noise를 첨가해 이미지 $J$를 만든다 하더라도 persistent homology는 크게 달라지지 않는다.
 
+Persistent homology를 통해 얻은 정보는 coordinate에 의존하지 않기 때문에, 어디에 있는 어떤 component가 persistence에 대응하는지 알기 어렵다.
+그러나, 이미지 데이터의 경우 각 pixel 값이 유일하기 때문에 component의 birth time에 대응하는 pixel 값을 가지는 이미지 내의 component를 추적하면 된다.
+
+
+## 2. Topological Image Modification (TIM)
+### 2.1 Image smoothing
+
+이미지의 Persistent homology를 구하기 전에 homology가 잘 계산되도록 *image smoothing*을 수행한다.
+이렇게 해서 pixel 값이 급격하게 변하는 부분을 완만하게 만들어 filtration이 너무 급격하게 변하지 않도록 만든다.
+image smoothing을 하는 방법은 CNN 아키텍쳐에서 Average pooling과 매우 유사하다.
+
+1. 홀수 $k$를 고정시키고, 이미지 $I$의 각 픽셀 $p$에 대하여, $k\times k$ 사이즈 neighborhood $\mathcal{N}_k(p)$를 생각하자. 이때 이미지의 영역 밖으로 넘어가는 부분은 정의하지 않도록 한다.
+2. 그런 다음 $I$와 동일한 사이즈의 이미지 $I'$를 각 픽셀마다 $\mathcal{N}_k(p)$에 포함된 픽셀들의 grayscale 값의 평균값을 부여한다.
+
+저자들은 hyperparameter $k$를 선택할 때, $\Delta(I)/25$에 가까운 값이 효과적임을 관찰했다.
+여기서 $\Delta(I)$는 이미지의 픽셀단위 대각선 길이다.
+
+### 2.2 Border modification
+현실의 이미지에서 persistence가 긴 component가 실제 관심있는 object라고 보장할 수 없다.
+여기서 저자들은 기막힌 트릭을 사용한다.
+오히려 persistence가 가장 긴 component가 이미지의 중요한 object에 대응하지 않는다고 하는 것이다.
+
+*Border modification*은 "중요한 object는 적어도 이미지의 테두리(border)와 붙어있지는 않을 것이다"라는 가정에서 위와 같은 아이디어를 구현한 것이다.
+이러한 가정은 "중요한 object가 중앙에 놓여있다"는 가정보다 약한 가정이다.
+Border modification은 이미지 $I$에서 테두리(border)부분의 pixel 값만 이미지의 가장 낮은 pixel value로 변환하고 나머지는 그대로 놔둔 새로운 이미지 $I_b$를 만드는 것이다.
+이렇게 하면 complex가 형성되면서 테두리와 가까이 있는 중요하지 않은 object들은 elder rule에 따라 테두리 component에 흡수될 것이고, 결국 테두리는 infinite persistence를 가지게 된다.
+따라서 이후에는 finite persistence에 대해서만 분석하면 이번에는 긴 persistence가 중요한 object를 나타낼 가능성이 더 커지게 된다.
 
 
 

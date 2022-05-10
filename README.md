@@ -21,5 +21,5 @@
 
 ### 2.3 Application (Not Machine Learning)
 
-1. Topological image modification for object detection and topological image processing of skin lesions (R. Vandaele, et al. 2020)
+1. [Topological image modification for object detection and topological image processing of skin lesions (R. Vandaele, et al. 2020)](https://github.com/SHlee-TDA/Paper-Reviews/tree/main/Topological_image_modification)
     TDA를 활용한 효과적인 Image denoising & segmentation process
