@@ -32,6 +32,8 @@ Deep Learning도 결국은 여러 층의 non-linear layer 구조를 활용하여
 그러나, 이 논문에서 주장하는 것은 Neural Network가 점점 깊어질 수록, $\mathcal{H}$로의 근사는 어려운 반면, $\mathcal{F}$로의 근사는 훨씬 수월하다는 것이다. 
 
 ![Problem Setting : $\mathcal{H} : \mathbb{R}\rightarrow \mathbb{R}$는 $\mathcal{H}(x) = x\sin{x} +x$로 주어져 있다. 이 상황에서 데이터를 sampling해 MLP를 이용해 각각 $\mathcal{H}(x)$와 $\mathcal{H}(x) -x$로 근사시켜보고 MSE를 측정해보자.](https://github.com/SHlee-TDA/MyPaperReviews/blob/main/Deep_Residual_Learning_for_Image_Recognition/Residual01.png?raw=true)
+:--:
+<b>Problem Setting : $\mathcal{H} : \mathbb{R}\rightarrow \mathbb{R}$는 $\mathcal{H}(x) = x\sin{x} +x$로 주어져 있다. 이 상황에서 데이터를 sampling해 MLP를 이용해 각각 $\mathcal{H}(x)$와 $\mathcal{H}(x) -x$로 근사시켜보고 MSE를 측정해보자.</b>
 
 Problem Setting : $\mathcal{H} : \mathbb{R}\rightarrow \mathbb{R}$는 $\mathcal{H}(x) = x\sin{x} +x$로 주어져 있다. 이 상황에서 데이터를 sampling해 MLP를 이용해 각각 $\mathcal{H}(x)$와 $\mathcal{H}(x) -x$로 근사시켜보고 MSE를 측정해보자.
 
